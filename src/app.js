@@ -23,3 +23,26 @@ export async function getWeather(location) {
 
 	return await response.json();
 }
+
+export function processWeatherData(weatherData) {
+	const place = weatherData.resolvedAddress;
+	const temp = weatherData.currentConditions.temp;
+	const conditions = weatherData.currentConditions.conditions;
+	const conditionsIcon = weatherData.currentConditions.icon;
+	const days = weatherData.days.slice(0, 5).map((day) => {
+		return {
+			high: day.tempmax,
+			low: day.tempmin,
+			conditionsIcon: day.icon,
+			date: day.datetime,
+		};
+	});
+
+	return {
+		place,
+		temp,
+		conditions,
+		conditionsIcon,
+		days,
+	};
+}

@@ -6,7 +6,7 @@
 		<title>Weather App</title>
 	</head>
 	<body>
-		<main>
+		<main class="card">
 			<h1>Weather App</h1>
 
 			<form id="search-form">
@@ -15,13 +15,13 @@
 					id="location-input"
 					name="location"
 					type="text"
-					placeholder="Search a city, e.g. Subotica"
+					placeholder="Search a city, e.g. Belgrade"
 					required
 				/>
 				<button type="submit">Search</button>
 			</form>
 
-			<button id="unit-toggle" type="button">Switch to °F</button>
+			<button id="unit-toggle" type="button">Switch to °C</button>
 
 			<p id="loading" hidden>Loading…</p>
 			<p id="error" role="alert" hidden></p>

@@ -1,0 +1,143 @@
+[hidden] {
+	display: none !important;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+:root {
+	--bg-from: #2f80ed;
+	--bg-to: #8ed1fc;
+	--text: #fff;
+}
+
+body[data-theme="cloudy"] {
+	--bg-from: #5f6b7a;
+	--bg-to: #aab4c0;
+}
+body[data-theme="rain"] {
+	--bg-from: #2c3e50;
+	--bg-to: #4b6584;
+}
+body[data-theme="storm"] {
+	--bg-from: #1f1c2c;
+	--bg-to: #4a4e69;
+}
+body[data-theme="fog"] {
+	--bg-from: #7f8c8d;
+	--bg-to: #cfd8dc;
+	--text: #1b2a38;
+}
+body[data-theme="snow"] {
+	--bg-from: #9fb4c7;
+	--bg-to: #e6eef5;
+	--text: #1b2a38;
+}
+body[data-night="true"] {
+	--night: 0.45;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: system-ui, sans-serif;
+	color: var(--text);
+	background:
+		linear-gradient(
+			rgba(0, 0, 0, var(--night, 0)),
+			rgba(0, 0, 0, var(--night, 0))
+		),
+		linear-gradient(160deg, var(--bg-from), var(--bg-to));
+	background-attachment: fixed;
+}
+
+.card {
+	width: min(92%, 28rem);
+	margin: 3rem 0 1rem;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(8px);
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 1.4rem;
+}
+
+form {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+
+input {
+	flex: 1;
+	min-width: 0;
+	padding: 0.6rem 0.8rem;
+	border: none;
+	border-radius: 0.5rem;
+	font: inherit;
+}
+
+button {
+	padding: 0.6rem 1rem;
+	border: none;
+	border-radius: 0.5rem;
+	font: inherit;
+	cursor: pointer;
+}
+
+#error {
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	background: rgba(180, 30, 30, 0.85);
+	color: #fff;
+}
+
+#place {
+	margin: 1rem 0 0;
+}
+#temp {
+	margin: 0;
+	font-size: 3.5rem;
+	font-weight: 700;
+}
+#conditions {
+	margin-top: 0;
+	font-size: 1.1rem;
+}
+
+#forecast {
+	list-style: none;
+	margin: 1rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.4rem;
+}
+#forecast li {
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+footer {
+	margin: auto 0 1rem;
+	font-size: 0.85rem;
+}
+footer a {
+	color: inherit;
+}
