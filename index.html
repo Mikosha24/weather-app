@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+	<script defer src="main.js"></script></head>
+	<body>
+		<main class="card">
+			<h1>Weather App</h1>
+
+			<form id="search-form">
+				<label for="location-input" class="visually-hidden">Location</label>
+				<input
+					id="location-input"
+					name="location"
+					type="text"
+					placeholder="Search a city, e.g. Belgrade"
+					required
+				/>
+				<button type="submit">Search</button>
+			</form>
+
+			<button id="unit-toggle" type="button">Switch to °C</button>
+
+			<p id="loading" hidden>Loading…</p>
+			<p id="error" role="alert" hidden></p>
+
+			<section id="weather" hidden>
+				<h2 id="place"></h2>
+				<p id="temp"></p>
+				<p id="conditions"></p>
+				<ul id="forecast"></ul>
+			</section>
+		</main>
+
+		<footer>
+			<p>
+				Weather data by
+				<a href="https://www.visualcrossing.com/">Visual Crossing</a>
+			</p>
+		</footer>
+	</body>
+</html>
